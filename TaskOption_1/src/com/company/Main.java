@@ -60,7 +60,7 @@ public class Main {
         for (int i = 0; i < fileNames.size(); i++)      // Прошёлся по всему List<String> fileName по его длинне
             fileList.add(new File(fileNames.get(i)));   // В List fileList добавил new File и из каждого Lust fileNames (по которому прошёлся полностью) добавил каждый элемент (которой есть в fileNames)
 
-        for (File resultMainAll : fileList) {           //  Прошёлся циклом по List <File> result (теперь там должен быть каждый файл: File dir1 = new File("C:/Games/src/...") и так далее, для каждшо файла)
+        for (File resultMainAll : fileList) {           // Прошёлся циклом по List <File> result (теперь там должен быть каждый файл: File dir1 = new File("C:/Games/src/...") и так далее, для каждшо файла)
             resultMainAll.createNewFile();              // Создали файлы для каждого элемента, которые в List<File> fileList
             System.out.println(resultMainAll.exists()); // Проверка всех файлов, если такие файлы или нет (будет печатать и выдвать результат true или false)
         }
@@ -77,7 +77,7 @@ public class Main {
             return;                                                                         // После этого, как происходит false: Идёт прерывание метода if (!file.exists()) { ... }  (если сработает код: (!file.exists()) выходим из цикла и другой код уже не работает дальше
         }
 
-        try (FileWriter writer = new FileWriter(tempTxt, true)) {                    // Передаём файл (то есть его путь: tempTxt (String tempTxt = GAMES + "\\temp\\temp.txt")) , который нужно записать в файл temp.txt
+        try (FileWriter writer = new FileWriter(tempTxt, true)) {                           // Передаём файл (то есть его путь: tempTxt (String tempTxt = GAMES + "\\temp\\temp.txt")) , который нужно записать в файл temp.txt
             writer.write(text);                                                             // Записали всё, весь текст text (согласно String text = file.getCanonicalPath() + " существует файл - " + file.exists(); )
         } catch (IOException ex) {                                                          // Обернули всё в  try catch , если выдасть ошибку
             System.out.println(ex.getMessage());                                            // Если выдаст всё-таки ошибку, покажет это сообщение
